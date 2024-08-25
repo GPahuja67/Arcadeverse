@@ -1,2 +1,1 @@
-# Arcadeverse
-Arcadeverse: A dynamic arcade website crafted with HTML, CSS, JavaScript, and React, delivering classic games with a modern twist.
+Arcadeverse is your ultimate online destination for retro-themed arcade games, offering a diverse selection of classic titles from our childhood. Whether you are looking to test your skills in a classic game of Tic-Tac-Toe, sharpen your Memory with a Card matching game, or challenge your typing speed, Arcadeverse provides an authentic nostalgic experience for everyone. The platform features adaptive difficulty settings, a search function, achievements and medals, a score counter, daily and weekly challenges, and a wide game selection. Explore our diverse selection of games in the retro game haven! 
