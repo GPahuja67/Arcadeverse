@@ -15,13 +15,13 @@ html {
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0 auto;
-    padding: 0;
-    background-color: #E0EAF5;
+    background-color: #111111;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     overflow-x: hidden; /* Hide horizontal overflow */
     overflow-y: auto; /* Allow vertical scrolling */
+    margin-top:100px;
 }
 
 .container {
@@ -31,16 +31,18 @@ body {
 .container::-webkit-scrollbar { 
     display: none;
 }
+
 /* Navigation Bar Styles */
 .navbar {
     background-color: #111111;
     color: white;
-    padding: 10px 0px 10px 10px;
-    border-radius: 0px;
-    margin: 0px 0px;
-    position: sticky;
+    padding: 20px 0 20px 0;
+    margin: 0;
+    position: fixed;
     top: 0;
-    z-index: 1000;
+    width:100%;
+    z-index: 1200;
+    align-items: center;
 }
 
 .logo {
@@ -61,13 +63,14 @@ body {
 
 .navbar .site-name {
     font-size: 40px;
-    font-weight: bold;
+    font-weight: bolder;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .navbar .logo-name-wrap {
     display: flex;
     align-items: center;
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 .navbar .subtitle {
@@ -78,20 +81,50 @@ body {
 
 .navbar .nav-links {
     margin-bottom: 20px;
-    margin-right: 20px;
+    margin-right: 40px;
 }
 
 .navbar .nav-links a {
     color: white;
     text-decoration: none;
-    margin: 0 10px;
-    padding: 10px;
+    margin: 0 20px;
+    padding: 0px;
     font-size: 20px;
     transition: color 0.3s;
 }
 
 .navbar .nav-links a:hover {
     color: #E0EAF5;
+}
+
+/* Smaller NavBar */
+
+.navbar, .navbar .site-name, .navbar .nav-links a, .navbar .logo {
+    transition: all 0.5s ease-in-out;
+}
+
+.navbar.shrink {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 22.5px 0;
+}
+
+.navbar.shrink .site-name {
+    font-size: 30px;
+}
+
+.navbar.shrink .nav-links {
+    margin-bottom: 10px;
+    margin-right: 40px;
+}
+
+.navbar.shrink .nav-links a {
+    font-size: 18px;
+    margin: 0 10px;
+}
+
+.navbar.shrink .logo {
+    max-width: 20%;
 }
 
 /* Slideshow Container */
@@ -111,7 +144,7 @@ body {
 .slideshow img {
     width: 100%;
     display: block;
-    transition: opacity 0.2s ease-in-out; /* Smooth transition for opacity */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition for opacity */
 }
 
 .overlay {
@@ -126,14 +159,31 @@ body {
     z-index: 1; /* Ensure overlay is above the image */
 }
 
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
 .fade-out {
-    opacity: 0;
+    animation: fadeOut 1s ease-in-out forwards; /* Smooth fade-out */
 }
 
 .fade-in {
-    opacity: 1;
+    animation: fadeIn 1s ease-in-out forwards; /* Smooth fade-in */
 }
-
 
 /* Indicator Styles */
 .indicator-container {
@@ -143,23 +193,25 @@ body {
     transform: translateX(-50%);
     display: flex;
     gap: 20px;
+    z-index: 1000;
 }
 
 /* Base Indicator Styles */
 .indicator {
-    width: 16px; /* Adjust size as needed */
-    height: 16px; /* Adjust size as needed */
-    border-radius: 50%; /* Circular shape */
-    background-color: #ffffff; /* Default color */
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #ffffff; 
     transition: background-color 0.3s, transform 0.3s, outline 0.3s;
-    border: 2px solid transparent; /* To ensure consistent sizing with the outline */
+    border: 2px solid transparent; 
+    z-index: 1000;
 }
 
 /* Active Indicator Styles */
 .indicator.active {
-    background-color: #111111; /* Active color */
-    transform: scale(1.2); /* Enlarged size */
-    outline: 2px solid white; /* White outline */
+    background-color: #111111;
+    transform: scale(1.2);
+    outline: 2px solid white;
 }
 
 
@@ -176,6 +228,27 @@ body {
     display: flex;
     overflow:hidden;
     object-position: top;
+}
+
+.mostpopulargames {
+    background-color: #232323;
+    align-items: center;
+    margin:0 auto;
+    display: flex;
+    z-index: 900;
+    width:100%;
+    padding: 100px;
+}
+
+.mostpopulargames span {
+    background-color: #B4280E;
+    font-size:42px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 10px 20% 10px 26%;
+    color: white;
+    font-weight: bold;
+    width: 100%;
+    display:flex;
 }
 
 .game-block {
@@ -213,15 +286,30 @@ body {
 }
 
 .game-title {
+    display: flex;
     font-size: 24px;
     font-weight: bold;
     margin: 25px 100px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .game-description {
+    display: flex;
     max-width: 100%;
     font-size: 20px;
     margin: 25px 100px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Align the content to the right for the second game */
+.align-right {
+    align-items: flex-end; /* Align the title and description to the right */
+    text-align: right; /* Align the text content to the right */
+}
+
+.align-right .game-title, 
+.align-right .game-description {
+    margin: 25px 100px; /* Adjust margin to avoid pushing the content to the left */
 }
 
 /* Footer Styles */
