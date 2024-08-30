@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="toe.css">
+</head>
+<body>
+    <h1 class="neon-text">Tic-Tac-Toe</h1>
+        <!-- Add this line to insert the image -->
+        <img src="c:\Users\gaurika\Downloads\WhatsApp Image 2024-08-24 at 10.30.00 PM.jpeg"topLeftImage" alt="Top Left Image">
+    
+        <h1 class="neon-text">Tic-Tac-Toe</h1>
+        <!-- The rest of your HTML code -->
+    
+    <div id="gameOptions" class="modal">
+        <div class="modal-content">
+            <p>Choose your game mode:</p>
+            <button id="vsComputer" class="optionBtn">Play Against Computer</button>
+            <button id="vsPlayer" class="optionBtn">Play Against Player 2</button>
+        </div>
+    </div>
+
+    <div id="board">
+        <div class="cell" id="cell0" onclick="cellClicked('cell0')"></div>
+        <div class="cell" id="cell1" onclick="cellClicked('cell1')"></div>
+        <div class="cell" id="cell2" onclick="cellClicked('cell2')"></div>
+        <div class="cell" id="cell3" onclick="cellClicked('cell3')"></div>
+        <div class="cell" id="cell4" onclick="cellClicked('cell4')"></div>
+        <div class="cell" id="cell5" onclick="cellClicked('cell5')"></div>
+        <div class="cell" id="cell6" onclick="cellClicked('cell6')"></div>
+        <div class="cell" id="cell7" onclick="cellClicked('cell7')"></div>
+        <div class="cell" id="cell8" onclick="cellClicked('cell8')"></div>
+    </div>
+    
+    <p id="status" class="neon-text"></p>
+    <button onclick="reset()" class="neon-btn">Reset</button>
+    
+    <div id="victoryModal" class="modal">
+        <div class="modal-content">
+            <p id="winnerText"></p>
+            <button onclick="closeVictoryModal()" class="neon-btn">Close</button>
+        </div>
+    </div>
+
+    <script src="toe.js"></script>
+</body>
+</html>
